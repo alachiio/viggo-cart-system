@@ -1,6 +1,9 @@
 # cart-system
 
-This template should help get you started developing with Vue 3 in Vite.
+cart system with vue 3 and pinia <br><br>
+
+used dummyjson api to fetch products, more info at: <br>
+https://dummyjson.com/docs/products#products-all
 
 ## Recommended IDE Setup
 
