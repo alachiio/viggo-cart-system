@@ -1,5 +1,5 @@
 import { priceAfterDiscount } from '@/utils/helpers'
-import { isObject, useLocalStorage } from '@vueuse/core'
+import { useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import Swal from 'sweetalert2'
 import { useToast } from 'vue-toast-notification'

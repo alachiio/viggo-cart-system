@@ -1,6 +1,6 @@
 <script setup>
 import useCartStore from '@/stores/cart'
-import { CreditCardIcon, QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
+import { QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import Modal from '../Modal.vue'

@@ -24,7 +24,7 @@ const addToCart = () => {
 }
 </script>
 <template>
-  <div class="group relative" :key="product.id">
+  <div class="group relative">
     <div
       class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-80 lg:h-80 relative"
     >
