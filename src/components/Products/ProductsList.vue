@@ -1,21 +1,34 @@
 <script setup>
 import axios from '@/utils/axios'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import ProductCard from '@/components/Products/ProductCard.vue'
 
 const products = ref(null)
 const loading = ref(true)
 const error = ref(null)
 
+const props = defineProps({
+  category: {
+    type: String,
+    required: false,
+  },
+})
+
 onMounted(() => {
   fetchData()
 })
 
-const fetchData = async () => {
+watch(() => props.category, fetchData, { immediate: true })
+
+async function fetchData() {
   error.value = products.value = null
   loading.value = true
+  let url = 'https://dummyjson.com/products'
+  if(props.category) {
+    url += `/category/${props.category}`;
+  }
   await axios
-    .get('https://dummyjson.com/products/category/fragrances')
+    .get(url)
     .then((res) => {
       products.value = res.data.products
     })

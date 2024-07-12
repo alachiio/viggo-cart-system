@@ -30,7 +30,7 @@ const item = computed(() => cartStore.cart[props.index])
         <div class="flex justify-between">
           <h3 class="text-sm">
             <RouterLink
-              :to="`/${item.product.id}`"
+              :to="`/${item.product.category}/${item.product.id}`"
               class="font-medium text-gray-700 hover:text-gray-800"
             >
               {{ item.product.title }}

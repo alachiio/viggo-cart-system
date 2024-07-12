@@ -9,7 +9,7 @@ const cartStore = useCartStore()
 <template>
   <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
-      <div v-if="cartStore.cart.length == 0" class="flex flex-col items-center justify-center h-48">
+      <div v-if="cartStore.cart.length === 0" class="flex flex-col items-center justify-center h-48">
         <div class="flex items-center justify-center space-x-3">
           <ShoppingCartIcon class="w-10" />
           <h3>Your shopping cart is empty</h3>

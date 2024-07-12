@@ -42,7 +42,7 @@ const addToCart = () => {
           </div>
           <ShoppingCartIcon v-else class="w-6" />
         </button>
-        <RouterLink :to="`/${product.id}`" class="bg-green-400 text-white p-2 rounded">
+        <RouterLink :to="`/${product.category}/${product.id}`" class="bg-green-400 text-white p-2 rounded">
           <EyeIcon class="w-6" />
         </RouterLink>
       </div>
@@ -55,7 +55,7 @@ const addToCart = () => {
     <div class="mt-4 flex justify-between">
       <div>
         <h3 class="text-gray-700 font-semibold text-sm">
-          <RouterLink :to="`/${product.id}`">
+          <RouterLink :to="`/${product.category}/${product.id}`">
             {{ product.title }}
           </RouterLink>
         </h3>

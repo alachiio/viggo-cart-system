@@ -1,19 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { MinusIcon, PlusIcon, StarIcon } from '@heroicons/vue/20/solid'
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  RadioGroup,
-  RadioGroupOption,
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels
-} from '@headlessui/vue'
-import { CurrencyDollarIcon, GlobeAmericasIcon } from '@heroicons/vue/24/outline'
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 import useCartStore from '@/stores/cart'
@@ -31,7 +19,7 @@ const count = ref(1)
 
 watch(() => route.params.id, fetchData, { immediate: true })
 
-async function fetchData(id) {
+async function fetchData() {
   error.value = product.value = null
   loading.value = true
   await axios
@@ -48,9 +36,9 @@ async function fetchData(id) {
 }
 
 const handleCount = (direction) => {
-  if (direction == 'up') {
+  if (direction === 'up') {
     count.value++
-  } else if (direction == 'down' && count.value > 1) {
+  } else if (direction === 'down' && count.value > 1) {
     count.value--
   }
 }
